@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    tools:context="com.enisandroidclub.databaseintroduction.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/read_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnActionReadAll"
+            android:text="Read All" />
+
+        <Button
+            android:id="@+id/add_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnActionAdd"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/delete_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnActionDelete"
+            android:text="Delete" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Data would be here"
+        android:editable="false"
+        android:inputType="textMultiLine" >
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>
