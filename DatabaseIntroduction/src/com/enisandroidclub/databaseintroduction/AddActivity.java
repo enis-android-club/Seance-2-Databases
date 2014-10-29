@@ -16,12 +16,17 @@ public class AddActivity extends ActionBarActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_add);
+    
+    // We have to open the database each time we intend to use it
+    // So we'll just put that on the onCreate method
     myDatabase = new DBAdapter(getApplicationContext());
     myDatabase.open();
   }
 
   @Override
   protected void onDestroy() {
+	// On Destroy is launched every time we exit the
+	// activity, so we will put the database closing method here
     super.onDestroy();
     myDatabase.close();
   }

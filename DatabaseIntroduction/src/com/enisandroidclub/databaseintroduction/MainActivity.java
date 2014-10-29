@@ -31,14 +31,23 @@ public class MainActivity extends ActionBarActivity {
   public void btnActionReadAll(View v) {
     String all = "";
     Cursor cursor = myDatabase.getAllRows();
+    // cursor.moveToFirst() will return true if the cursor contain at least
+    // one line. And then place the "cursor" on the first line.
     if (cursor.moveToFirst()) {
       do {
+    	// cursor.getTYPE(X) will get the column on index X
+    	// And return it as the type TYPE
+    	
+    	// cursor.getColumnIndex("something") will get the index of the
+    	// column "something" in the current set of results.
         long id = cursor.getLong(cursor.getColumnIndex("_id"));
         String name = cursor.getString(cursor.getColumnIndex("name"));
         String phone = cursor.getString(cursor.getColumnIndex("phone"));
 
         all += id + " | " + name + " | " + phone + "\n";
 
+        // cursor.moveToNext() will check if there is another line, and will place
+        // the cursor on it.
       } while (cursor.moveToNext());
     }
 
